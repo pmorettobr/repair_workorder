@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_repair_workorder,repair.workorder,model_repair_workorder,,1,1,1,1
-access_repair_workorder_time,repair.workorder.time,model_repair_workorder_time,,1,1,1,1
+access_repair_workorder_user,repair.workorder.user,model_repair_workorder,,1,1,1,1
+access_repair_workorder_time_user,repair.workorder.time.user,model_repair_workorder_time,,1,1,1,1
