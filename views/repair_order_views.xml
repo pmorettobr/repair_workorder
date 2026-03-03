@@ -1,0 +1,36 @@
+<odoo>
+    <record id="repair_order_form_inherit_workorder" model="ir.ui.view">
+        <field name="name">repair.order.form.workorder</field>
+        <field name="model">repair.order</field>
+        <field name="inherit_id" ref="repair.view_repair_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Operations">
+                    <field name="workorder_ids">
+                        <tree editable="bottom"
+                              decoration-warning="state == 'draft'"
+                              decoration-info="state == 'progress'"
+                              decoration-success="state == 'done'">
+                            <field name="sequence"/>
+                            <field name="name"/>
+                            <field name="workcenter_id"/>
+                            <field name="current_employee_id"/>
+                            <field name="state"/>
+                            <field name="display_time"/>
+                            <button name="action_start"
+                                    type="object"
+                                    string="▶ Iniciar"
+                                    class="btn-primary"
+                                    attrs="{'invisible':[('state','!=','draft')]}"/>
+                            <button name="action_done"
+                                    type="object"
+                                    string="✔ Finalizar"
+                                    class="btn-success"
+                                    attrs="{'invisible':[('state','!=','progress')]}"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
